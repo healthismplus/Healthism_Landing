@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-03-26T13:20:03.843675",
+  "total_tests": 6,
+  "passed_tests": 6,
+  "success_rate": 100.0,
+  "test_results": [
+    {
+      "test_name": "API Root Endpoint",
+      "success": true,
+      "timestamp": "2026-03-26T13:20:02.927894",
+      "details": {
+        "status_code": 200,
+        "response": {
+          "message": "Hello World"
+        }
+      }
+    },
+    {
+      "test_name": "POST /api/status",
+      "success": true,
+      "timestamp": "2026-03-26T13:20:03.115752",
+      "details": {
+        "status_code": 200,
+        "request_data": {
+          "client_name": "test_client_132002"
+        },
+        "response_id": "22ce74d5-c6d8-4fc5-8735-531f593bab43",
+        "client_name": "test_client_132002"
+      }
+    },
+    {
+      "test_name": "GET /api/status",
+      "success": true,
+      "timestamp": "2026-03-26T13:20:03.265549",
+      "details": {
+        "status_code": 200,
+        "records_count": 1
+      }
+    },
+    {
+      "test_name": "POST /api/contact",
+      "success": true,
+      "timestamp": "2026-03-26T13:20:03.596006",
+      "details": {
+        "status_code": 200,
+        "request_data": {
+          "name": "Test User",
+          "email": "test@example.com",
+          "phone": "+1234567890",
+          "company": "Test Company",
+          "message": "This is a test message from automated testing."
+        },
+        "response_id": "19eb0b43-98d5-4c8d-9305-264fbd9c7ea5",
+        "name": "Test User",
+        "email": "test@example.com",
+        "timestamp": "2026-03-26T13:20:03.415100Z"
+      }
+    },
+    {
+      "test_name": "Contact Form Validation",
+      "success": true,
+      "timestamp": "2026-03-26T13:20:03.772006",
+      "details": {
+        "status_code": 422,
+        "expected_status": 422,
+        "validation_working": true,
+        "validation_errors": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "email"
+            ],
+            "msg": "value is not a valid email address: An email address must have an @-sign.",
+            "input": "invalid-email",
+            "ctx": {
+              "reason": "An email address must have an @-sign."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "CORS Configuration",
+      "success": true,
+      "timestamp": "2026-03-26T13:20:03.842766",
+      "details": {
+        "status_code": 204,
+        "cors_headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH",
+          "Access-Control-Allow-Headers": "*"
+        }
+      }
+    }
+  ]
+}

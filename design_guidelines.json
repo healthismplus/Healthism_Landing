@@ -1,0 +1,134 @@
+{
+  "project_name": "HealthismPlus Marketing Site",
+  "theme": "dark",
+  "archetype": "Archetype 5 (Jewel & Luxury) with Tech-Forward Navy & Teal",
+  "typography": {
+    "fonts_required": ["Syne", "DM Sans"],
+    "heading_font": "Syne",
+    "body_font": "DM Sans",
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tighter font-extrabold",
+      "h2": "text-4xl md:text-5xl tracking-tight font-bold",
+      "h3": "text-2xl md:text-3xl tracking-tight font-bold",
+      "h4": "text-xl font-bold",
+      "body": "text-base md:text-lg leading-relaxed",
+      "small": "text-sm uppercase tracking-[0.2em]"
+    }
+  },
+  "colors": {
+    "primary": {
+      "teal": "#1AAC8B",
+      "teal_light": "#22C9A5"
+    },
+    "background": {
+      "navy_dark": "#091A3A",
+      "navy_mid": "#0F2A5C"
+    },
+    "text": {
+      "white": "#FFFFFF",
+      "off_white": "#F4F8F7",
+      "muted": "#6B7A99"
+    },
+    "gradients": {
+      "hero_mesh": "radial-gradient(circle at 15% 50%, rgba(26, 172, 139, 0.25), transparent 25%), radial-gradient(circle at 85% 30%, rgba(34, 201, 165, 0.25), transparent 25%)",
+      "glass": "bg-white/5 backdrop-blur-xl border border-white/10"
+    }
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "p-4, p-8, p-16, p-24, py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "surface_strategies": {
+      "glassmorphism": "bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]",
+      "solid_card": "bg-[#0F2A5C] border border-white/5 shadow-lg",
+      "dot_grid": "bg-[radial-gradient(#1AAC8B_1px,transparent_1px)] [background-size:24px_24px] opacity-10"
+    }
+  },
+  "motion_and_interactions": {
+    "global": "Use Framer Motion for scroll-triggered reveal animations. Elements should stagger in with y: 20 and opacity: 0 to y: 0 and opacity: 1.",
+    "hover": "Cards should have subtle upward translation (-translate-y-1) and increased border opacity on hover.",
+    "marquee": "Use Framer Motion for auto-scrolling partner logos loop."
+  },
+  "sections": [
+    {
+      "name": "Navigation",
+      "design": "Sticky, fixed top, z-50. Glassmorphism backdrop-blur. Nav links: About, Hospital, Corporate, Wellness, Plans, Team, Contact. Active link has a #1AAC8B underline. Hamburger menu for mobile."
+    },
+    {
+      "name": "Hero",
+      "design": "Full viewport height (min-h-screen). CSS animated mesh gradient mixed with a dot-grid pattern overlay. Left side: Badge (small uppercase), large H1 heading, CTAs. Right side: Floating glassmorphism cards showcasing stats/features. Bottom: Animated counter stats."
+    },
+    {
+      "name": "USP",
+      "design": "4-column grid (or 2x2 on tablet, 1x4 on mobile). Use 'Solid Card' style with glowing hover effects."
+    },
+    {
+      "name": "Hospital Management",
+      "design": "2-column layout. Left: Feature list with icons. Right: `hospital_dashboard` mockup image with a subtle drop shadow."
+    },
+    {
+      "name": "Corporate Solutions",
+      "design": "6-card bento grid layout on `navy_dark` background. Mix column spans to create asymmetry."
+    },
+    {
+      "name": "Fad 2 Fit Gamification",
+      "design": "Timeline visualization. Use `gamification_timeline` image alongside discount cards. Glowing timeline nodes."
+    },
+    {
+      "name": "Subscription Plans",
+      "design": "Horizontal scroll section (or flex overflow-x-auto) featuring pricing plans. Highlight the 'Featured' card with a teal border and slight scale."
+    },
+    {
+      "name": "Partner Network",
+      "design": "Auto-scrolling marquee containing partner logo images. Desaturated images with hover to color."
+    },
+    {
+      "name": "Team",
+      "design": "Grid of leadership cards. Use `team_` images. Name and title below each image."
+    },
+    {
+      "name": "Contact",
+      "design": "Glassmorphism form set against a deep gradient background. Includes form validation. Connect to backend API."
+    },
+    {
+      "name": "Footer",
+      "design": "Large 'healthism+' logo. Multi-column links. Deep navy background."
+    }
+  ],
+  "media": {
+    "hospital_dashboard": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8ae58a07-8c4e-4113-a177-f86177920f4d/images/d226649e02c2a1687a2cff853a376bbb63def8fe9f74aad3ba66c0e9eeb14dd9.png",
+      "description": "Mockup of the premium hospital dashboard",
+      "category": "section_image"
+    },
+    "gamification_timeline": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8ae58a07-8c4e-4113-a177-f86177920f4d/images/f646bddd73de980a7b4c3a1247f36435343a402cf32e48d91889c7164b6fb9de.png",
+      "description": "3D render of gamification nodes",
+      "category": "section_image"
+    },
+    "corporate_wellness": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8ae58a07-8c4e-4113-a177-f86177920f4d/images/aee88eb54b0b548c43ee6bf8aca27e765593db23d1ca3d497d72fb0e0a7ac725.png",
+      "description": "Premium corporate wellness facility",
+      "category": "background_image"
+    },
+    "team_photos": [
+      "https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3NDUzMDEzOXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1629507313712-f21468afdf2e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3NDUzMDEzOXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3NDUzMDEzOXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1655249481446-25d575f1c054?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3NDUzMDEzOXww&ixlib=rb-4.1.0&q=85"
+    ],
+    "partner_logos": [
+      "https://images.unsplash.com/photo-1760037034804-2dce280659e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvfGVufDB8fHx8MTc3NDUzMDE0NXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1760037028485-d00dd2b8f6f0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvfGVufDB8fHx8MTc3NDUzMDE0NXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1773291933751-1fcff40c6133?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvfGVufDB8fHx8MTc3NDUzMDE0NXww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1760037028517-e5cc6e3ebd3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzR8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwYnJhbmQlMjBsb2dvfGVufDB8fHx8MTc3NDUzMDE0NXww&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "instructions_to_main_agent": {
+    "stack": "MERN Stack. Frontend: React + Vite, Tailwind CSS, Framer Motion, React Router DOM. Backend: Node.js, Express, MongoDB (Mongoose).",
+    "fonts": "Include Syne and DM Sans from Google Fonts via CDN or NPM. Apply Syne to all headings and DM Sans to body.",
+    "icons": "Use Lucide React only.",
+    "components": "Build custom Framer Motion components. Use purely custom HTML+Tailwind for the layouts to match the exact marketing page requirements.",
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute (e.g., data-testid='hero-cta-button').",
+    "backend_integration": "Set up a Mongoose schema for the Contact Form submissions. Create an Express POST route to handle saving the contact form data to MongoDB. Connect the frontend form to this backend API endpoint."
+  }
+}
