@@ -31,8 +31,7 @@ db = client[os.environ['DB_NAME']]
 MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY')
 MAILGUN_DOMAIN = os.environ.get('MAILGUN_DOMAIN')
 MAILGUN_SENDER_EMAIL = os.environ.get('MAILGUN_SENDER_EMAIL', 'noreply@mg.healthismplus.com')
-# RECIPIENT_EMAIL = 'info@healthismplus.com'  # Production email
-RECIPIENT_EMAIL = '0yashbhatt0@gmail.com'  # Production email
+RECIPIENT_EMAIL = 'info@healthismplus.com'  # Production email
 
 # Create the main app without a prefix
 app = FastAPI()
