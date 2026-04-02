@@ -17,7 +17,7 @@ import "@/App.css";
 import TeamPage from "./pages/TeamPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/`;
+const API = `${BACKEND_URL}`;
 
 // Animation Variants
 const fadeUp = {
