@@ -13,13 +13,13 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
     { label: "Corporate", tab: "corporate", isTab: true },
     { label: "Meet Our Team", path: "/team", isTab: false },
     { label: "Associates", section: "partners", isTab: false },
-    { label: "Contact Us", section: "contact", isTab: false }
+    { label: "Contact Us", section: "contact", isTab: false },
   ];
 
   const handleNavClick = (item) => {
     if (item.isTab) {
       setActiveTab(item.tab);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      onSectionClick("tab-switcher");
     } else if (item.path) {
       navigate(item.path);
     } else if (item.section) {
@@ -39,16 +39,19 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div 
-            className="flex items-center gap-2 cursor-pointer" 
+          <div
+            className="flex items-center gap-2 cursor-pointer"
             onClick={() => {
-              setActiveTab('individual');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }} 
+              setActiveTab("individual");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             data-testid="logo"
           >
             <img src="/logo.png" alt="HealthismPlus" className="h-9 w-9" />
-            <span className="text-lg font-bold text-[#1A1A1A]" style={{ fontFamily: 'Raleway' }}>
+            <span
+              className="text-lg font-bold text-[#1A1A1A]"
+              style={{ fontFamily: "Raleway" }}
+            >
               healthism<span className="text-[#13B58E]">+</span>
             </span>
           </div>
@@ -60,12 +63,12 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
                 key={item.label}
                 onClick={() => handleNavClick(item)}
                 className={`text-sm font-medium transition-colors relative py-1 ${
-                  item.isTab && activeTab === item.tab 
-                    ? 'text-[#13B58E]' 
-                    : 'text-[#6B7A99] hover:text-[#13B58E]'
+                  item.isTab && activeTab === item.tab
+                    ? "text-[#13B58E]"
+                    : "text-[#6B7A99] hover:text-[#13B58E]"
                 }`}
-                style={{ fontFamily: 'Raleway' }}
-                data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                style={{ fontFamily: "Raleway" }}
+                data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {item.label}
               </button>
@@ -81,7 +84,7 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-full font-semibold text-white text-sm"
-              style={{ background: '#13B58E', fontFamily: 'Raleway' }}
+              style={{ background: "#13B58E", fontFamily: "Raleway" }}
               data-testid="nav-download-cta"
             >
               Download App
@@ -103,7 +106,7 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
+          animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           className="lg:hidden bg-white border-t border-gray-100"
           data-testid="mobile-menu"
@@ -114,11 +117,11 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
                 key={item.label}
                 onClick={() => handleNavClick(item)}
                 className={`block w-full text-left py-2 font-medium text-sm ${
-                  item.isTab && activeTab === item.tab 
-                    ? 'text-[#13B58E]' 
-                    : 'text-[#6B7A99]'
+                  item.isTab && activeTab === item.tab
+                    ? "text-[#13B58E]"
+                    : "text-[#6B7A99]"
                 }`}
-                style={{ fontFamily: 'Raleway' }}
+                style={{ fontFamily: "Raleway" }}
               >
                 {item.label}
               </button>
@@ -128,7 +131,7 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-2.5 rounded-full font-semibold text-white text-center text-sm"
-              style={{ background: '#13B58E', fontFamily: 'Raleway' }}
+              style={{ background: "#13B58E", fontFamily: "Raleway" }}
             >
               Download App
             </a>
