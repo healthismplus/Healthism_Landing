@@ -48,10 +48,7 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
             data-testid="logo"
           >
             <img src="/logo.png" alt="HealthismPlus" className="h-9 w-9" />
-            <span
-              className="text-lg font-bold text-[#1A1A1A]"
-              style={{ fontFamily: "Raleway" }}
-            >
+            <span className="text-lg font-bold text-[#1A1A1A]">
               healthism<span className="text-[#13B58E]">+</span>
             </span>
           </div>
@@ -67,7 +64,6 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
                     ? "text-[#13B58E]"
                     : "text-[#6B7A99] hover:text-[#13B58E]"
                 }`}
-                style={{ fontFamily: "Raleway" }}
                 data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {item.label}
@@ -84,7 +80,9 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-full font-semibold text-white text-sm"
-              style={{ background: "#13B58E", fontFamily: "Raleway" }}
+              style={{
+                background: `linear-gradient(90deg, #006B5A 0%, #27A28B 100%)`,
+              }}
               data-testid="nav-download-cta"
             >
               Download App
@@ -121,7 +119,9 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
                     ? "text-[#13B58E]"
                     : "text-[#6B7A99]"
                 }`}
-                style={{ fontFamily: "Raleway" }}
+                style={{
+                  background: `linear-gradient(90deg, #006B5A 0%, #27A28B 100%)`,
+                }}
               >
                 {item.label}
               </button>
@@ -131,7 +131,9 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-2.5 rounded-full font-semibold text-white text-center text-sm"
-              style={{ background: "#13B58E", fontFamily: "Raleway" }}
+              style={{
+                background: `linear-gradient(90deg, #006B5A 0%, #27A28B 100%)`,
+              }}
             >
               Download App
             </a>

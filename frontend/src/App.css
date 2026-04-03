@@ -1,8 +1,8 @@
 /* App-specific styles */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap");
 /* Global Resets */
 * {
   margin: 0;
@@ -15,13 +15,20 @@ html {
 }
 
 body {
-  font-family: 'Merriweather', serif;
+  font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #FFFFFF;
-  color: #1A1A1A;
+  background: #ffffff;
+  color: #1a1a1a;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 /* App Container */
 .App {
   min-height: 100vh;
@@ -31,7 +38,7 @@ body {
 /* Selection Colors */
 ::selection {
   background: rgba(19, 181, 142, 0.3);
-  color: #0F1A19;
+  color: #0f1a19;
 }
 
 /* Scrollbar Styling */
@@ -40,16 +47,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #13B58E;
+  background: #13b58e;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0EA87F;
+  background: #0ea87f;
 }
 
 /* Animation Classes */
@@ -74,7 +81,8 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -114,7 +122,7 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #13B58E, #22C9A5);
+  background: linear-gradient(135deg, #13b58e, #22c9a5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -137,7 +145,7 @@ body {
 }
 
 .shimmer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -160,7 +168,7 @@ button:focus {
 }
 
 button:focus-visible {
-  outline: 2px solid #13B58E;
+  outline: 2px solid #13b58e;
   outline-offset: 2px;
 }
 
@@ -180,11 +188,11 @@ textarea:focus {
   h1 {
     font-size: 2rem !important;
   }
-  
+
   h2 {
     font-size: 1.75rem !important;
   }
-  
+
   h3 {
     font-size: 1.25rem !important;
   }
@@ -208,9 +216,17 @@ img {
 
 /* Hero Background Pattern */
 .hero-pattern {
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(19, 181, 142, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(19, 181, 142, 0.1) 0%, transparent 50%);
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(19, 181, 142, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(19, 181, 142, 0.1) 0%,
+      transparent 50%
+    );
 }
 
 /* Marquee Animation */
@@ -266,7 +282,7 @@ img {
 
 /* Focus Visible for Keyboard Navigation */
 .focus-visible:focus {
-  outline: 2px solid #13B58E;
+  outline: 2px solid #13b58e;
   outline-offset: 2px;
 }
 
