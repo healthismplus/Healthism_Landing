@@ -1,17 +1,7 @@
 import { motion } from "framer-motion";
-import {
-  Calendar,
-  Pill,
-  FolderHeart,
-  Dumbbell,
-  Video,
-  Check,
-  FileText,
-  Apple,
-  Activity,
-  MessageSquare,
-  ArrowRight,
-} from "lucide-react";
+import { Check } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const IndividualContent = ({ onContactClick }) => {
   const fadeUp = {
@@ -25,14 +15,14 @@ const IndividualContent = ({ onContactClick }) => {
   };
 
   const providerTypes = [
-    { label: "Hospitals", icon: "🏥" },
-    { label: "Doctors", icon: "👨‍⚕️" },
-    { label: "Pharmacies", icon: "💊" },
-    { label: "Labs", icon: "🔬" },
-    { label: "Yoga Centres", icon: "🧘" },
-    { label: "Clinics", icon: "🏨" },
-    { label: "Gym", icon: "💪" },
-    { label: "Experts", icon: "👩‍⚕️" },
+    { label: "Hospitals", icon: "/assets/providersection/hospital.svg" },
+    { label: "Doctors", icon: "/assets/providersection/doc.svg" },
+    { label: "Pharmacies", icon: "/assets/providersection/pharmacy.svg" },
+    { label: "Labs", icon: "/assets/providersection/labs.svg" },
+    { label: "Yoga Centres", icon: "/assets/providersection/yoga.svg" },
+    { label: "Clinics", icon: "/assets/providersection/clinic.svg" },
+    { label: "Gym", icon: "/assets/providersection/gym.svg" },
+    { label: "Experts", icon: "/assets/providersection/expert.svg" },
   ];
 
   const challengeStages = [
@@ -63,81 +53,315 @@ const IndividualContent = ({ onContactClick }) => {
     { value: "50%", label: "Wellness Services" },
     { value: "70%", label: "Post-plan Diagnostics" },
   ];
-
   const plans = [
-    {
-      name: "Health Save",
-      price: "₹2,360",
-      period: "/year",
-      features: [
-        "Access to Platform: Full Access",
-        "Gamification: Full Access",
-        "Virtual Diet Consultation: 3 Sessions Free",
-        "Virtual GP Consultation: ₹99/session",
-        "20% off on medicines",
-        "Basic Blood Tests Included",
-        "Digital Health Card: Free",
-        "Family Plan add ons: Annual ₹499",
-      ],
-      featured: false,
-    },
     {
       name: "Health Save Pro",
       price: "₹17,700",
       period: "/year",
+      tag: "Most Popular",
+      highlight: true,
       features: [
         "Access to Platform: Full Access",
         "Gamification: Full Access",
         "Virtual Diet Consultation: Unlimited",
-        "Virtual GP Consultation: 12 sessions/year",
-        "Comprehensive Blood Panel",
-        "Priority Booking",
-        "Digital Health Card: Free",
-        "Annual Physical Health Test Included",
+        "Virtual GP Consultation: 12 session/ Annually, post that ₹99 per session",
+        "Dental & Eye: ₹499/session",
+        "Pharmacy Services (Delivery 96h/ Same Day): 20% off on all meds and 15% off insulin",
+        "Pharmacy Services (Same Day): 12% off meds on all meds and 10% off on insulin",
+        "Virtual Wellness Expert (Psychologist / Physiotherapist), Specialized Doctor Consultation, Supplement Market Place, Hospital Network, OPD network, Other Market Place: at Discount Price",
+        "Booking : Through App / WhatsApp / Call Center",
       ],
-      featured: true,
+      tests: [
+        "Blood Glucose Fasting",
+        "Complete Hemogram",
+        "Vitamin B12 Cyanocobalamin",
+        "Vitamin D Total-25 Hydroxy",
+        "Kidney Function Test",
+        "Thyroid Profile-Total (T3, T4 & TSH Ultra-sensitive)",
+        "Urine Routine & Microscopy Extended",
+        "HbA1c",
+      ],
     },
     {
       name: "Health Save Max",
-      price: "₹17,700",
+      price: "₹17700",
       period: "/year",
+      tag: "Best Value",
+      highlight: true,
       features: [
         "Access to Platform: Full Access",
         "Gamification: Full Access",
         "Virtual Diet Consultation: Unlimited",
         "Virtual GP Consultation: Unlimited",
-        "Full Body Health Checkup",
-        "Specialist Consultations",
-        "24/7 Priority Support",
-        "Accidental Insurance up to ₹10,00,000",
+        "Dental & Eye: ₹499/session",
+        "Pharmacy Services (Delivery 96h/ Same Day): 20% off on all meds and 15% off insulin",
+        "Pharmacy Services (Same Day): 12% off meds on all meds and 10% off on insulin",
+        "Virtual Wellness Expert (Psychologist / Physiotherapist) , Specialized Doctor Consultation, Supplement Market Place, Hospital Network, OPD network, Other Market Place: at Discount Price",
+        "Booking : Through App / WhatsApp / Call Center",
       ],
-      featured: false,
+      tests: [
+        "CBC",
+        "Urine Routine",
+        "ESR",
+        "FBS",
+        "PPBS",
+        "HbA1C",
+        "Total Cholesterol",
+        "HDL",
+        "LDL",
+        "Triglycerides",
+        "VLDL",
+        "Total Protien",
+        "Albumin",
+        "Globulin",
+        "Bilirubin",
+        "SGOT",
+        "SGPT",
+        "Alkaline Phosphatase",
+        "GGTP",
+        "BUM",
+        "S. Creatinine",
+        "S. Electrolytes",
+        "S. Uric Acid",
+        "S. Calcium",
+        "T3",
+        "T4",
+        "TSH",
+        "ECG",
+        "Stress Test or 2D Echo",
+        "Chest X-Ray",
+        "USG Abdomen & Pelvis",
+        "Pap Smear",
+        "Mammography",
+        "PSA",
+        "PFT",
+        "Physician",
+        "Gynecologist",
+      ],
+    },
+
+    {
+      name: "Health Save Plus",
+      price: "₹5,900",
+      period: "/year",
+      tag: null,
+      highlight: false,
+      features: [
+        "Access to Platform: Full Access",
+        "Gamification: Full Access",
+        "Virtual Diet Consultation: 6 Sessions Free then ₹149 per session",
+        "Virtual GP Consultation: ₹99/ session",
+        "Dental & Eye: ₹499/session",
+        "Pharmacy Services (Delivery 96h/ Same Day): 20% off on all meds and 15% off insulin",
+        "Pharmacy Services (Same Day): 12% off meds on all meds and 10% off on insulin",
+        "Virtual Wellness Expert (Psychologist / Physiotherapist) , Specialized Doctor Consultation, Supplement Market Place, Hospital Network, OPD network, Other Market Place - at Discount Price",
+        "Booking : Through App / WhatsApp",
+      ],
+      tests: [
+        "Calcium",
+        "Cholesterol",
+        "SGPT",
+        "SGOT",
+        "TSH",
+        "RBS",
+        "Diabetes Panel and HBA1C",
+      ],
+    },
+
+    {
+      name: "Health Save Prime",
+      price: "₹11,800",
+      period: "/year",
+      tag: null,
+      highlight: false,
+      features: [
+        "Access to Platform: Full Access",
+        "Gamification: Full Access",
+        "Virtual Diet Consultation: 12 Sessions / Annually, then ₹149 per session",
+        "Virtual GP Consultation: 6 session / Annually, then ₹99 per session",
+        "Dental & Eye: ₹499/session",
+        "Pharmacy Services (Delivery 96h/ Same Day): 20% off on all meds and 15% off insulin",
+        "Pharmacy Services (Same Day): 12% off meds on all meds and 10% off on insulin",
+        "Virtual Wellness Expert (Psychologist / Physiotherapist) , Specialized Doctor Consultation, Supplement Market Place, Hospital Network, OPD network, Other Market Place - at Discount Price",
+        "Booking : Through App / WhatsApp",
+      ],
+      tests: [
+        "Blood Glucose Fasting",
+        "Complete Hemogram",
+        "Kidney Function Test",
+        "Lipid Profile",
+        "Liver Function Test",
+        "Urine Routine & Microscopy Extended",
+        "TSH Ultra - Sensitive",
+        "Vitamin B12 Cyanocobalamin",
+        "Vitamin D Total-25 Hydroxy",
+      ],
+    },
+
+    {
+      name: "Health Save Pro Plus",
+      price: "₹23,600",
+      period: "/year",
+      tag: null,
+      highlight: false,
+      features: [
+        "Access to Platform: Full Access",
+        "Gamification: Full Access",
+        "Virtual Diet Consultation: Unlimited",
+        "Virtual GP Consultation: Unlimited",
+        "Dental & Eye: ₹499/session",
+        "Pharmacy Services (Delivery 96h/ Same Day): 20% off on all meds and 15% off insulin",
+        "Pharmacy Services (Same Day): 12% off meds on all meds and 10% off on insulin",
+        "Virtual Wellness Expert (Psychologist / Physiotherapist) , Specialized Doctor Consultation, Supplement Market Place, Hospital Network, OPD network, Other Market Place - at Discount Price",
+        "Booking : Through App / WhatsApp / Call Centre",
+      ],
+      tests: [
+        "Blood Glucose Fasting",
+        "Complete Hemogram",
+        "Kidney Function Test",
+        "Lipid Profile",
+        "Liver Function Test",
+        "Urine Routine & Microscopy Extended",
+        "Thyroid Profile - Total (T3, T4 & TSH Ultra - Sensitive)",
+        "Vitamin B12 Cyanocobalamin",
+        "Vitamin D Total-25 Hydroxy",
+      ],
+    },
+    {
+      name: "Health Save",
+      price: "₹2,360",
+      period: "/year",
+      tag: null,
+      highlight: false,
+      features: [
+        "Access to Platform: Full Access",
+        "Gamification: Full Access",
+        "Virtual Diet Consultation: 3 sessions free then ₹149/session",
+        "Virtual GP Consultation: ₹99/session",
+        "Dental & Eye: ₹499/session",
+        "Pharmacy Services(Delivery 96h/Same Day): 20% off on all meds and 15% off insulin",
+        "Pharmacy Services(Same Day): 12% off on all meds and 10% off insulin",
+        "Virtual Wellness Expert (Psychologist/ Physiotherapist), Specialised Doctor COnsultation, Supplement Market Place, Hospital Network , OPD network , Other Market Place: at Discount Price ",
+        "Booking: Through App / WhatsApp ",
+      ],
+      tests: ["Cholesterol, Calcium , SGPT, SGOT , TSH , RBS"],
     },
   ];
 
   const aiFeatures = [
     {
-      icon: <MessageSquare size={18} />,
+      icon: <img src="/assets/aiHealth/diet.svg" alt="foods" />,
       title: "AI Dietician",
       desc: "Instant meal analysis and personalized nutrition plans.",
     },
     {
-      icon: <FileText size={18} />,
+      icon: <img src="/assets/aiHealth/pres.svg" alt="prescription" />,
       title: "Prescription AI",
       desc: "Understand your medication with deep clinical insights.",
     },
     {
-      icon: <Activity size={18} />,
+      icon: <img src="/assets/aiHealth/report.svg" alt="activity" />,
       title: "Health Report AI",
       desc: "Predictive analysis of your long-term health trends.",
     },
     {
-      icon: <Apple size={18} />,
+      icon: <img src="/assets/aiHealth/tracker.svg" alt="calorie" />,
       title: "Calorie Tracker AI",
       desc: "Log your daily activities with just a photo.",
     },
   ];
+  const PricingCard = ({ plan, isActive, onContactClick }) => {
+    return (
+      <motion.div
+        animate={{ scale: isActive ? 1.03 : 0.95 }}
+        transition={{ duration: 0.3 }}
+        className={`
+        rounded-2xl p-10 mt-10 mb-14 relative h-full flex flex-col justify-between
+        transition-all duration-300
+        ${
+          isActive
+            ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
+            : "bg-white border border-gray-200 opacity-70"
+        }
+      `}
+      >
+        {/* TAG */}
+        {plan.tag && (
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span
+              className={`
+              text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide
+              ${plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"}
+            `}
+            >
+              {plan.tag.toUpperCase()}
+            </span>
+          </div>
+        )}
 
+        {/* CONTENT */}
+        <div>
+          {/* TITLE */}
+          <h3 className="text-[16px] font-bold text-[#1A1A1A] mb-2">
+            {plan.name}
+          </h3>
+
+          {/* PRICE */}
+          <div className="mb-4">
+            <span className="text-[32px] font-extrabold text-[#1A1A1A]">
+              {plan.price}
+            </span>
+            <span className="text-[12px] text-[#6B7A99] ml-1">
+              {plan.period}
+            </span>
+          </div>
+
+          {/* FEATURES */}
+          <div>
+            <p className="text-[10px] font-semibold text-gray-400 mb-2">
+              FEATURES:
+            </p>
+
+            <ul className="space-y-2 mb-4">
+              {plan.features.map((feature, j) => (
+                <li key={j} className="flex items-start gap-2 text-[12px]">
+                  <Check className="text-[#13B58E] mt-0.5" size={14} />
+                  <span className="text-[#6B7A99] leading-relaxed">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* BLOOD TESTS */}
+          {plan.tests && (
+            <div className="bg-[#F3F6F7] p-3 rounded-lg text-[11px] text-[#6B7A99] mb-4">
+              <p className="text-[10px] font-semibold text-gray-400 mb-1">
+                BLOOD TESTS:
+              </p>
+              {plan.tests.join(", ")}
+            </div>
+          )}
+        </div>
+
+        {/* BUTTON */}
+        <button
+          onClick={onContactClick}
+          className={`
+          w-full py-3 rounded-lg text-sm font-semibold transition
+          ${
+            isActive
+              ? "bg-[#006B5A] text-white"
+              : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
+          }
+        `}
+        >
+          Select Plan
+        </button>
+      </motion.div>
+    );
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -275,342 +499,237 @@ const IndividualContent = ({ onContactClick }) => {
       </section>
 
       {/* Provider Network - Stats Section */}
-      <section
-        className="py-16 px-6 lg:px-12 bg-[#0D1B1A]"
-        data-testid="providers-section"
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
-            <motion.div variants={fadeUp}>
-              <h2
-                className="text-3xl md:text-4xl font-extrabold text-white mb-1"
-                style={{ fontFamily: "Raleway" }}
-              >
+      <section className="py-24 px-6 lg:px-12 bg-[#070B0C]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between mb-16 ">
+            <div>
+              {/* Heading */}
+              <h2 className="text-[44px] md:text-[56px] font-bold leading-[1.1] text-white">
                 1,200+ Providers.
               </h2>
-              <h2
-                className="text-3xl md:text-4xl font-extrabold text-white mb-5"
-                style={{ fontFamily: "Raleway" }}
-              >
+
+              <h2 className="text-[44px] md:text-[56px] font-bold leading-[1.1] text-[#7FE3CF] mb-6">
                 One Membership.
               </h2>
-              <p className="text-white/50 mb-8 max-w-md text-sm leading-relaxed">
+
+              {/* Subtext */}
+              <p className="text-white/50 text-[15px] leading-relaxed max-w-[520px]">
                 From emergency services to routine wellness, our network is
                 carefully curated to bring you the best in medical care.
               </p>
-              <div>
-                <div
-                  className="text-4xl font-extrabold text-[#13B58E]"
-                  style={{ fontFamily: "Raleway" }}
-                >
+            </div>
+            {/* FLOATING BADGE */}
+            <div>
+              <div className=" bg-[#0F2F2C] border border-[#1E5F58] px-6 py-4 rounded-xl shadow-lg">
+                <div className="text-[26px] font-bold text-[#7FE3CF]">
                   50,000+
                 </div>
-                <div className="text-xs text-white/40 uppercase tracking-wider mt-1">
+                <div className="text-[10px] text-[#7FE3CF]/70 tracking-widest uppercase mt-1">
                   Active Users
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {providerTypes.map((type, i) => (
+              <div
+                key={i}
+                className="bg-[#121617] border border-[#1F2A2C] rounded-[18px] py-8 flex flex-col items-center justify-center transition-all hover:border-[#2AA787] hover:shadow-[0_0_20px_rgba(42,167,135,0.15)]"
+              >
+                {/* ICON */}
+                <img src={type.icon} alt={type.label} />
 
-            <motion.div
-              variants={staggerContainer}
-              className="grid grid-cols-4 gap-3"
-            >
-              {providerTypes.map((type, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255,255,255,0.08)",
-                  }}
-                  className="bg-white/5 border border-white/10 rounded-xl p-3 text-center transition-all"
-                >
-                  <div className="text-xl mb-1">{type.icon}</div>
-                  <div className="text-[10px] text-white/50 font-medium">
-                    {type.label}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Fad 2 Fit & Kart */}
-      <section
-        className="py-16 px-6 lg:px-12 bg-white"
-        data-testid="challenge-section"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Fad 2 Fit Challenge */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeUp} className="mb-5">
-                <span className="text-xs text-[#13B58E] font-semibold tracking-wider uppercase">
-                  12-Week Program
-                </span>
-                <h3
-                  className="text-2xl font-extrabold text-[#1A1A1A] mt-1"
-                  style={{ fontFamily: "Raleway" }}
-                >
-                  Fad 2 Fit Challenge
-                </h3>
-              </motion.div>
-
-              <div className="space-y-2">
-                {challengeStages.map((stage, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp}
-                    whileHover={{ x: 4 }}
-                    className="flex items-center gap-3 p-3 bg-[#F8FAFB] rounded-xl"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-[#0D1B1A] flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
-                      {stage.stage}
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs text-[#13B58E] font-semibold uppercase tracking-wider">
-                        Stage {stage.stage}: {stage.title}
-                      </div>
-                      <div className="text-xs text-[#6B7A99] mt-0.5">
-                        {stage.steps} • {stage.time}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+                {/* LABEL */}
+                <div className="text-[12px] text-white/70 tracking-wide pt-3">
+                  {type.label}
+                </div>
               </div>
-
-              <motion.button
-                variants={fadeUp}
-                whileHover={{ scale: 1.02 }}
-                onClick={onContactClick}
-                className="mt-5 px-5 py-2.5 rounded-full font-semibold text-white text-sm"
-                style={{ background: "#13B58E", fontFamily: "Raleway" }}
-              >
-                Take Challenge
-              </motion.button>
-            </motion.div>
-
-            {/* HealthismPlus Kart */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeUp} className="mb-5">
-                <h3
-                  className="text-2xl font-extrabold text-[#1A1A1A]"
-                  style={{ fontFamily: "Raleway" }}
-                >
-                  HealthismPlus Kart<span className="text-[#13B58E]">.</span>
-                </h3>
-                <p className="text-[#6B7A99] text-sm mt-1">
-                  Save on Everything Health & Wellness
-                </p>
-              </motion.div>
-
-              <motion.div
-                variants={staggerContainer}
-                className="grid grid-cols-2 gap-3"
-              >
-                {discounts.map((discount, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp}
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-[#F8FAFB] rounded-xl p-4 text-center"
-                  >
-                    <div
-                      className="text-2xl font-extrabold text-[#13B58E] mb-0.5"
-                      style={{ fontFamily: "Raleway" }}
-                    >
-                      {discount.value}
-                    </div>
-                    <div className="text-[10px] text-[#6B7A99] font-medium">
-                      {discount.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Plans */}
-      <section
-        className="py-16 px-6 lg:px-12 bg-[#F8FAFB]"
-        data-testid="pricing-section"
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center mb-10"
-          >
-            <motion.h2
-              variants={fadeUp}
-              className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] mb-2"
-              style={{ fontFamily: "Raleway" }}
-            >
-              Choose Your Health Save Plan
-            </motion.h2>
-            <motion.p variants={fadeUp} className="text-[#6B7A99] text-sm">
-              Simple, transparent pricing for every lifestyle.
-            </motion.p>
-          </motion.div>
+      {/* Fad 2 Fit & Kart */}
+      <section className="py-24 px-6 lg:px-12 bg-[#F2F6F5]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 items-start">
+            {/* LEFT */}
+            <div>
+              {/* Heading */}
+              <div className="mb-10">
+                <span className="text-[12px] text-[#006B5A] font-semibold tracking-[0.2em] uppercase">
+                  12-WEEK JOURNEY
+                </span>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-5"
-          >
-            {plans.map((plan, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                whileHover={{ y: -6 }}
-                className={`rounded-2xl p-6 relative ${plan.featured ? "bg-[#0D1B1A] text-white" : "bg-white border border-gray-100"}`}
-              >
-                {plan.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider bg-[#13B58E]">
-                    Most Popular
-                  </div>
-                )}
-                <h3
-                  className="text-lg font-bold mb-2"
-                  style={{ fontFamily: "Raleway" }}
-                >
-                  {plan.name}
+                <h3 className="text-[38px] leading-[1.2] font-extrabold text-[#191C1D] mt-4">
+                  Fad 2 Fit <span className="text-[#006B5A]">Challenge</span>
                 </h3>
-                <div className="mb-4">
-                  <span
-                    className="text-3xl font-extrabold"
-                    style={{ fontFamily: "Raleway" }}
+              </div>
+
+              {/* Stages */}
+              <div className="space-y-7">
+                {challengeStages.map((stage, i) => (
+                  <div key={i} className="flex items-start gap-5">
+                    {/* Circle */}
+                    <div
+                      className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-semibold
+                ${
+                  i === 0
+                    ? "bg-[#006B5A] text-white"
+                    : "bg-[#006B5A33] text-[#006B5A]"
+                }`}
+                    >
+                      {stage.stage}
+                    </div>
+
+                    {/* Text */}
+                    <div>
+                      <p className="text-[15px] font-semibold text-[#191C1D]">
+                        Stage {stage.stage}: {stage.title}
+                      </p>
+
+                      <p className="text-[13px] text-[#64748B] mt-1">
+                        {stage.steps} • {stage.time}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Button */}
+              <button
+                onClick={onContactClick}
+                className="mt-12 w-[380px] py-3.5 rounded-[12px] bg-[#239882] text-white font-semibold text-[14px] hover:opacity-95 transition"
+              >
+                Take Challenge
+              </button>
+            </div>
+
+            {/* RIGHT */}
+            <div className="bg-[#F7FAF9] rounded-3xl p-10">
+              {/* Heading */}
+              <div className="mb-8">
+                <h3 className="text-[34px] leading-[1.2] font-extrabold text-[#191C1D]">
+                  HealthismPlus <span className="text-[#006B5A]">Kart.</span>
+                </h3>
+
+                <p className="text-[#3D4945] text-[14px] mt-2">
+                  Save on Everything Health & Wellness
+                </p>
+              </div>
+
+              {/* Cards */}
+              <div className="grid grid-cols-2 gap-7">
+                {discounts.map((discount, i) => (
+                  <div
+                    key={i}
+                    className="bg-[#EEF3F2] rounded-2xl py-10 text-center"
                   >
-                    {plan.price}
-                  </span>
-                  <span
-                    className={`text-sm ${plan.featured ? "text-white/50" : "text-[#6B7A99]"}`}
-                  >
-                    {plan.period}
-                  </span>
-                </div>
-                <ul className="space-y-2 mb-5">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-2 text-xs">
-                      <Check
-                        className="text-[#13B58E] flex-shrink-0 mt-0.5"
-                        size={14}
-                      />
-                      <span
-                        className={
-                          plan.featured ? "text-white/70" : "text-[#6B7A99]"
-                        }
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  onClick={onContactClick}
-                  className={`w-full py-2.5 rounded-full font-semibold text-sm ${plan.featured ? "bg-[#13B58E] text-white" : "border border-gray-200 text-[#1A1A1A] hover:border-[#13B58E] hover:text-[#13B58E]"}`}
-                  style={{ fontFamily: "Raleway" }}
-                >
-                  Select Plan
-                </motion.button>
-              </motion.div>
-            ))}
-          </motion.div>
+                    <div className="text-[36px] font-extrabold text-[#006B5A]">
+                      {discount.value}
+                    </div>
+
+                    <div className="text-[12px] text-[#3D4945] font-bold mt-1 tracking-wide">
+                      {discount.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* AI Health Team */}
-      <section
-        className="py-16 px-6 lg:px-12 bg-white"
-        data-testid="ai-section"
-      >
+      {/* Pricing Slider */}
+      <section className="py-16 px-6 lg:px-12 bg-[#EDF3F4]">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <h2 className="text-[#191C1D]  font-extrabold text-[40px]">
+            Choose Your Health Save Plan
+          </h2>
+          <p className="text-[16px] text-[#3D4945] mt-2">
+            Simple, transparent pricing for every lifestyle.
+          </p>
+        </div>
+
+        <Swiper
+          spaceBetween={20}
+          centeredSlides={true}
+          loop={true}
+          breakpoints={{
+            0: { slidesPerView: 1.1 },
+            640: { slidesPerView: 1.3 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {plans.map((plan, i) => (
+            <SwiperSlide key={i}>
+              {({ isActive }) => (
+                <PricingCard
+                  plan={plan}
+                  isActive={isActive}
+                  onContactClick={onContactClick}
+                />
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* AI Health Section */}
+      <section className="py-24 px-6 lg:px-12 bg-[#EDF3F4]">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
-            <motion.div variants={fadeUp}>
-              <h2
-                className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] leading-tight"
-                style={{ fontFamily: "Raleway" }}
-              >
-                Your Personal
-                <br />
-                AI Health Team.
-                <br />
-                <span className="text-[#13B58E]">Always On.</span>
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* LEFT */}
+            <div>
+              <h2 className="text-[38px] leading-[1.15] font-extrabold text-[#0F172A]">
+                Your Personal <br />
+                AI Health Team. <br />
+                <span className="text-[#006B5A]">Always On.</span>
               </h2>
 
-              <div className="grid grid-cols-2 gap-3 mt-8">
+              {/* FEATURES */}
+              <div className="grid grid-cols-2 gap-5 mt-10">
                 {aiFeatures.map((feature, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    variants={fadeUp}
-                    whileHover={{ y: -4 }}
-                    className="p-4 bg-[#F8FAFB] rounded-xl"
+                    className="p-5 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E2E8F0] hover:shadow-sm transition"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#13B58E]/10 flex items-center justify-center text-[#13B58E] mb-2">
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3">
                       {feature.icon}
                     </div>
-                    <div
-                      className="font-semibold text-[#1A1A1A] text-sm mb-0.5"
-                      style={{ fontFamily: "Raleway" }}
-                    >
+
+                    <div className="font-semibold text-[#0F172A] text-[14px] mb-1">
                       {feature.title}
                     </div>
-                    <div className="text-xs text-[#6B7A99] leading-relaxed">
+
+                    <div className="text-[12px] text-[#64748B] leading-relaxed">
                       {feature.desc}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div variants={fadeUp} className="flex justify-center">
-              <div className="bg-[#0D1B1A] rounded-3xl p-8 w-full max-w-xs">
-                <div className="flex flex-col items-center text-center">
-                  <img
-                    src="/assets/ai-health-icon.png"
-                    alt="AI Health Assistant"
-                    className="w-36 h-36 object-contain mb-4"
-                  />
-                  <p
-                    className="text-white/60 text-sm italic"
-                    style={{ fontFamily: "Merriweather" }}
-                  >
-                    "Your recovery is ahead of schedule. Keep it up!"
-                  </p>
-                </div>
+            {/* RIGHT */}
+
+            <div className="relative w-full h-full  rounded-[32px] bg-[#2E3132] flex items-center justify-center flex-col gap-10">
+              {/* Glow Circle */}
+              <div className="absolute w-28 h-28 rounded-full bg-[#006B5A] blur-2xl opacity-40"></div>
+
+              {/* Icon Circle */}
+              <div className="relative w-32 h-32 rounded-full bg-[#006B5A] flex items-center justify-center text-white text-2xl shadow-lg">
+                <img src="/assets/aiHealth/brain.svg" alt="brain" />
               </div>
-            </motion.div>
-          </motion.div>
+
+              {/* Quote */}
+              <div className="px-5 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-center max-w-[260px]">
+                <p className="text-white text-[14px] ">
+                  "Your recovery is ahead of schedule. Keep it up!"
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </motion.div>
