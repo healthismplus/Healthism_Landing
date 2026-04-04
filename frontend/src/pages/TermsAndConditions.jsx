@@ -1,6 +1,7 @@
 import Footer from "@/components/shared/Footer";
 import Navigation from "@/components/shared/Navigation";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* ================= TERMS DATA ================= */
 const TERMS_DATA = [
@@ -514,13 +515,10 @@ const TERMS_DATA = [
 
 /* ================= COMPONENT ================= */
 const TermsAndConditions = () => {
-  const [activeTab, setActiveTab] = useState("individual");
-
+  const [activeTab, setActiveTab] = useState("");
+  const navigate = useNavigate();
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate(`/?section=${sectionId}`);
   };
 
   return (

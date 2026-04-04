@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 // Shared Components
@@ -29,6 +29,19 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 function HomePage() {
   const [activeTab, setActiveTab] = useState("individual");
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const sectionId = params.get("section");
+
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   // Scroll to section handler
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);

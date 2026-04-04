@@ -1,15 +1,13 @@
 import Footer from "@/components/shared/Footer";
 import Navigation from "@/components/shared/Navigation";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PrivacyPolicy = () => {
-  const [activeTab, setActiveTab] = useState("individual");
-
+  const [activeTab, setActiveTab] = useState("");
+  const navigate = useNavigate();
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate(`/?section=${sectionId}`);
   };
   return (
     <div>
