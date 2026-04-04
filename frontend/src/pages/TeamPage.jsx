@@ -315,10 +315,7 @@ const TeamPage = () => {
                   OUR PEOPLE
                 </span>
               </div>
-              <h1
-                className="text-4xl md:text-5xl font-extrabold text-white mb-4"
-                style={{ fontFamily: "Raleway" }}
-              >
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
                 Meet the HealthismPlus Team
               </h1>
               <p className="text-white/70 text-lg max-w-3xl">
@@ -533,9 +530,8 @@ const TeamPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => navigate("/#contact")}
+                onClick={() => navigate(`/?section=${"contact"}`)}
                 className="px-8 py-4 bg-[#13B58E] text-white rounded-full font-bold text-lg transition-all hover:shadow-xl"
-                style={{ fontFamily: "Raleway" }}
                 data-testid="contact-cta"
               >
                 Get in Touch
