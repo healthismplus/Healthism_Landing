@@ -283,19 +283,17 @@ const IndividualContent = ({ onContactClick }) => {
           rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-10
           mt-8 sm:mt-10 mb-10 sm:mb-14 relative h-full flex flex-col justify-between
           transition-all duration-300
-          ${
-            isActive
-              ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
-              : "bg-white border border-gray-200 opacity-80"
+          ${isActive
+            ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
+            : "bg-white border border-gray-200 opacity-80"
           }
         `}
       >
         {plan.tag && (
           <div className="absolute -top-3 left-1/2 -translate-x-1/2">
             <span
-              className={`text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide ${
-                plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"
-              }`}
+              className={`text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide ${plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"
+                }`}
             >
               {plan.tag.toUpperCase()}
             </span>
@@ -341,10 +339,9 @@ const IndividualContent = ({ onContactClick }) => {
           onClick={onContactClick}
           className={`
             w-full py-3 rounded-lg text-sm font-semibold transition
-            ${
-              isActive
-                ? "bg-[#006B5A] text-white"
-                : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
+            ${isActive
+              ? "bg-[#006B5A] text-white"
+              : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
             }
           `}
         >
@@ -404,9 +401,14 @@ const IndividualContent = ({ onContactClick }) => {
                 1,200+ partner network in seconds.
               </p>
 
-              <button className="w-full sm:w-auto bg-[#2AA787] text-white text-[14px] px-5 py-2.5 rounded-[12px] font-medium">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.healthismplus.customer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-[#2AA787] text-white text-[14px] px-5 py-2.5 rounded-[12px] font-medium"
+              >
                 Book Appointment
-              </button>
+              </a>
             </div>
 
             <div className="col-span-12 md:col-span-8 relative overflow-hidden rounded-[22px] sm:rounded-[28px] bg-gradient-to-br from-[#0F3D3A] to-[#0B2E2B] p-5 sm:p-7 md:p-8 flex items-center min-h-[280px] sm:min-h-[320px]">
@@ -420,9 +422,14 @@ const IndividualContent = ({ onContactClick }) => {
                   medicines and NABL-accredited lab tests.
                 </p>
 
-                <button className="bg-white text-[#006B5A] px-5 py-2.5 rounded-[12px] text-[14px] font-bold">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.healthismplus.customer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-[#006B5A] px-5 py-2.5 rounded-[12px] text-[14px] font-bold"
+                >
                   Order Now
-                </button>
+                </a>
               </div>
 
               <img
@@ -550,11 +557,10 @@ const IndividualContent = ({ onContactClick }) => {
                 {challengeStages.map((stage, i) => (
                   <div key={i} className="flex items-start gap-4 sm:gap-5">
                     <div
-                      className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0 ${
-                        i === 0
-                          ? "bg-[#006B5A] text-white"
-                          : "bg-[#006B5A33] text-[#006B5A]"
-                      }`}
+                      className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0 ${i === 0
+                        ? "bg-[#006B5A] text-white"
+                        : "bg-[#006B5A33] text-[#006B5A]"
+                        }`}
                     >
                       {stage.stage}
                     </div>
