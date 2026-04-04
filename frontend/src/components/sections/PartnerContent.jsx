@@ -27,7 +27,11 @@ const PartnerContent = ({ onContactClick }) => {
     { id: "doctors", label: "Doctors", icon: <Stethoscope size={16} /> },
     { id: "clinics", label: "Clinics", icon: <Building2 size={16} /> },
     { id: "hospitals", label: "Hospitals", icon: <Activity size={16} /> },
-    { id: "pathology", label: "Pathology Labs", icon: <FlaskConical size={16} /> },
+    {
+      id: "pathology",
+      label: "Pathology Labs",
+      icon: <FlaskConical size={16} />,
+    },
     { id: "pharmacies", label: "Pharmacies", icon: <Pill size={16} /> },
   ];
 
@@ -77,10 +81,22 @@ const PartnerContent = ({ onContactClick }) => {
   const comparisonData = [
     { feature: "Verified Lead Generation", directory: false, healthism: true },
     { feature: "Integrated HMS Software", directory: false, healthism: true },
-    { feature: "Scanning Appointment Booking", directory: false, healthism: true },
-    { feature: "Real-time Revenue Tracking", directory: false, healthism: true },
+    {
+      feature: "Scanning Appointment Booking",
+      directory: false,
+      healthism: true,
+    },
+    {
+      feature: "Real-time Revenue Tracking",
+      directory: false,
+      healthism: true,
+    },
     { feature: "Network Wide Referrals", directory: "Basic", healthism: true },
-    { feature: "Digital Marketing Tools", directory: "Paid Extras", healthism: true },
+    {
+      feature: "Digital Marketing Tools",
+      directory: "Paid Extras",
+      healthism: true,
+    },
     { feature: "Dedicated Support Team", directory: false, healthism: true },
   ];
 
@@ -142,16 +158,15 @@ const PartnerContent = ({ onContactClick }) => {
               relationships with patients who are already looking for you.
             </motion.p>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-8 flex flex-wrap gap-3"
-            >
-              <button
-                onClick={onContactClick}
-                className="px-5 py-3 rounded-md bg-[#2A3077] text-white text-sm font-semibold shadow-sm hover:opacity-95 transition"
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://hms.healthismplus.com/#/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-5 py-3 rounded-md bg-[#2A3077] text-white text-sm font-semibold shadow-sm hover:opacity-95 transition"
               >
                 Sign in to HMS
-              </button>
+              </a>
 
               <button
                 onClick={onContactClick}
@@ -380,8 +395,8 @@ const PartnerContent = ({ onContactClick }) => {
                 </h3>
 
                 <p className="text-[13px] md:text-sm text-white/80 max-w-md leading-6">
-                  Our team handles the data migration and staff training. You focus on
-                  patients, we focus on the transition.
+                  Our team handles the data migration and staff training. You
+                  focus on patients, we focus on the transition.
                 </p>
               </div>
 
@@ -410,8 +425,8 @@ const PartnerContent = ({ onContactClick }) => {
               </h3>
 
               <p className="text-[13px] md:text-sm text-[#68707F] leading-6">
-                24/7 technical assistance and dedicated account managers for premium
-                partners.
+                24/7 technical assistance and dedicated account managers for
+                premium partners.
               </p>
             </motion.div>
 
@@ -430,8 +445,8 @@ const PartnerContent = ({ onContactClick }) => {
               </h3>
 
               <p className="text-[13px] md:text-sm text-[#68707F] leading-6 max-w-[260px]">
-                Whether you&apos;re a single clinic or a national chain, our platform
-                grows with you.
+                Whether you&apos;re a single clinic or a national chain, our
+                platform grows with you.
               </p>
             </motion.div>
 
@@ -447,8 +462,8 @@ const PartnerContent = ({ onContactClick }) => {
                 </h3>
 
                 <p className="text-[13px] md:text-sm text-white/70 max-w-md leading-6">
-                  Unlock insights into patient demographics, treatment efficiency, and
-                  financial health.
+                  Unlock insights into patient demographics, treatment
+                  efficiency, and financial health.
                 </p>
               </div>
 

@@ -253,22 +253,46 @@ const IndividualContent = ({ onContactClick }) => {
 
   const aiFeatures = [
     {
-      icon: <img src="/assets/aiHealth/diet.svg" alt="foods" className="w-7 h-7 object-contain" />,
+      icon: (
+        <img
+          src="/assets/aiHealth/diet.svg"
+          alt="foods"
+          className="w-7 h-7 object-contain"
+        />
+      ),
       title: "AI Dietician",
       desc: "Instant meal analysis and personalized nutrition plans.",
     },
     {
-      icon: <img src="/assets/aiHealth/pres.svg" alt="prescription" className="w-7 h-7 object-contain" />,
+      icon: (
+        <img
+          src="/assets/aiHealth/pres.svg"
+          alt="prescription"
+          className="w-7 h-7 object-contain"
+        />
+      ),
       title: "Prescription AI",
       desc: "Understand your medication with deep clinical insights.",
     },
     {
-      icon: <img src="/assets/aiHealth/report.svg" alt="activity" className="w-7 h-7 object-contain" />,
+      icon: (
+        <img
+          src="/assets/aiHealth/report.svg"
+          alt="activity"
+          className="w-7 h-7 object-contain"
+        />
+      ),
       title: "Health Report AI",
       desc: "Predictive analysis of your long-term health trends.",
     },
     {
-      icon: <img src="/assets/aiHealth/tracker.svg" alt="calorie" className="w-7 h-7 object-contain" />,
+      icon: (
+        <img
+          src="/assets/aiHealth/tracker.svg"
+          alt="calorie"
+          className="w-7 h-7 object-contain"
+        />
+      ),
       title: "Calorie Tracker AI",
       desc: "Log your daily activities with just a photo.",
     },
@@ -283,17 +307,19 @@ const IndividualContent = ({ onContactClick }) => {
           rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-10
           mt-8 sm:mt-10 mb-10 sm:mb-14 relative h-full flex flex-col justify-between
           transition-all duration-300
-          ${isActive
-            ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
-            : "bg-white border border-gray-200 opacity-80"
+          ${
+            isActive
+              ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
+              : "bg-white border border-gray-200 opacity-80"
           }
         `}
       >
         {plan.tag && (
           <div className="absolute -top-3 left-1/2 -translate-x-1/2">
             <span
-              className={`text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide ${plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"
-                }`}
+              className={`text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide ${
+                plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"
+              }`}
             >
               {plan.tag.toUpperCase()}
             </span>
@@ -309,17 +335,24 @@ const IndividualContent = ({ onContactClick }) => {
             <span className="text-[28px] sm:text-[30px] md:text-[32px] font-extrabold text-[#1A1A1A] break-words">
               {plan.price}
             </span>
-            <span className="text-[12px] text-[#6B7A99] ml-1">{plan.period}</span>
+            <span className="text-[12px] text-[#6B7A99] ml-1">
+              {plan.period}
+            </span>
           </div>
 
           <div>
-            <p className="text-[10px] font-semibold text-gray-400 mb-2">FEATURES:</p>
+            <p className="text-[12px] font-semibold text-[#3D4945] mb-2">
+              FEATURES:
+            </p>
 
             <ul className="space-y-2 mb-4">
               {plan.features.map((feature, j) => (
-                <li key={j} className="flex items-start gap-2 text-[11px] sm:text-[12px]">
+                <li
+                  key={j}
+                  className="flex items-start gap-2 text-[12px] sm:text-[13px]"
+                >
                   <Check className="text-[#13B58E] mt-0.5 shrink-0" size={14} />
-                  <span className="text-[#6B7A99] leading-relaxed break-words">
+                  <span className="text-[#191C1D] font-bold leading-relaxed break-words">
                     {feature}
                   </span>
                 </li>
@@ -328,8 +361,10 @@ const IndividualContent = ({ onContactClick }) => {
           </div>
 
           {plan.tests && (
-            <div className="bg-[#F3F6F7] p-3 rounded-lg text-[11px] text-[#6B7A99] mb-4 leading-relaxed break-words">
-              <p className="text-[10px] font-semibold text-gray-400 mb-1">BLOOD TESTS:</p>
+            <div className="bg-[#F3F6F7] p-3 rounded-lg text-[11px]  font-semibold text-[#3D4945] mb-4 leading-relaxed break-words">
+              <p className="text-[10px] font-bold text-[#006B5A] mb-1">
+                BLOOD TESTS:
+              </p>
               {plan.tests.join(", ")}
             </div>
           )}
@@ -339,9 +374,10 @@ const IndividualContent = ({ onContactClick }) => {
           onClick={onContactClick}
           className={`
             w-full py-3 rounded-lg text-sm font-semibold transition
-            ${isActive
-              ? "bg-[#006B5A] text-white"
-              : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
+            ${
+              isActive
+                ? "bg-[#006B5A] text-white"
+                : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
             }
           `}
         >
@@ -389,7 +425,11 @@ const IndividualContent = ({ onContactClick }) => {
           <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6 mt-8 sm:mt-10">
             <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
-                <img src="/assets/book.svg" alt="book" className="max-w-full max-h-full" />
+                <img
+                  src="/assets/book.svg"
+                  alt="book"
+                  className="max-w-full max-h-full"
+                />
               </div>
 
               <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
@@ -460,7 +500,11 @@ const IndividualContent = ({ onContactClick }) => {
 
             <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
-                <img src="/assets/fitness.svg" alt="fitness" className="max-w-full max-h-full" />
+                <img
+                  src="/assets/fitness.svg"
+                  alt="fitness"
+                  className="max-w-full max-h-full"
+                />
               </div>
 
               <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
@@ -475,7 +519,11 @@ const IndividualContent = ({ onContactClick }) => {
 
             <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
-                <img src="/assets/talk.svg" alt="video call" className="max-w-full max-h-full" />
+                <img
+                  src="/assets/talk.svg"
+                  alt="video call"
+                  className="max-w-full max-h-full"
+                />
               </div>
 
               <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
@@ -528,7 +576,11 @@ const IndividualContent = ({ onContactClick }) => {
                 key={i}
                 className="bg-[#121617] border border-[#1F2A2C] rounded-[16px] sm:rounded-[18px] py-6 sm:py-8 px-3 flex flex-col items-center justify-center text-center transition-all hover:border-[#2AA787] hover:shadow-[0_0_20px_rgba(42,167,135,0.15)]"
               >
-                <img src={type.icon} alt={type.label} className="h-10 sm:h-auto object-contain" />
+                <img
+                  src={type.icon}
+                  alt={type.label}
+                  className="h-10 sm:h-auto object-contain"
+                />
                 <div className="text-[11px] sm:text-[12px] text-white/70 tracking-wide pt-3">
                   {type.label}
                 </div>
@@ -557,10 +609,11 @@ const IndividualContent = ({ onContactClick }) => {
                 {challengeStages.map((stage, i) => (
                   <div key={i} className="flex items-start gap-4 sm:gap-5">
                     <div
-                      className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0 ${i === 0
-                        ? "bg-[#006B5A] text-white"
-                        : "bg-[#006B5A33] text-[#006B5A]"
-                        }`}
+                      className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0 ${
+                        i === 0
+                          ? "bg-[#006B5A] text-white"
+                          : "bg-[#006B5A33] text-[#006B5A]"
+                      }`}
                     >
                       {stage.stage}
                     </div>
@@ -577,13 +630,15 @@ const IndividualContent = ({ onContactClick }) => {
                   </div>
                 ))}
               </div>
-
-              <button
-                onClick={onContactClick}
-                className="mt-8 sm:mt-10 md:mt-12 w-full sm:w-auto sm:min-w-[260px] md:min-w-[320px] px-6 py-3.5 rounded-[12px] bg-[#239882] text-white font-semibold text-[14px] hover:opacity-95 transition"
+              <a
+                href="https://fad2fit.co.in/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Take Challenge
-              </button>
+                <button className="mt-8 sm:mt-10 md:mt-12 w-full sm:w-auto sm:min-w-[260px] md:min-w-[320px] px-6 py-3.5 rounded-[12px] bg-[#239882] text-white font-semibold text-[14px] hover:opacity-95 transition">
+                  Take Challenge
+                </button>
+              </a>
             </div>
 
             <div className="bg-[#F7FAF9] rounded-[24px] sm:rounded-3xl p-5 sm:p-7 md:p-10">
@@ -693,7 +748,11 @@ const IndividualContent = ({ onContactClick }) => {
               <div className="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#006B5A] blur-2xl opacity-40"></div>
 
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#006B5A] flex items-center justify-center text-white text-2xl shadow-lg">
-                <img src="/assets/aiHealth/brain.svg" alt="brain" className="w-12 sm:w-14 md:w-auto" />
+                <img
+                  src="/assets/aiHealth/brain.svg"
+                  alt="brain"
+                  className="w-12 sm:w-14 md:w-auto"
+                />
               </div>
 
               <div className="px-4 sm:px-5 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-center max-w-[260px] sm:max-w-[300px]">
