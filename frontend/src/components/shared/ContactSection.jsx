@@ -4,7 +4,7 @@ import { Send } from "lucide-react";
 import axios from "axios";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = `${BACKEND_URL}`;
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ const ContactSection = () => {
     email: "",
     phone: "",
     company: "",
-    message: ""
+    message: "",
   });
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,13 +26,13 @@ const ContactSection = () => {
       await axios.post(`${API}/contact`, formData);
       setFormStatus({
         type: "success",
-        message: "Thank you! We'll be in touch soon."
+        message: "Thank you! We'll be in touch soon.",
       });
       setFormData({ name: "", email: "", phone: "", company: "", message: "" });
     } catch (error) {
       setFormStatus({
         type: "error",
-        message: "Something went wrong. Please try again or email us directly."
+        message: "Something went wrong. Please try again or email us directly.",
       });
     } finally {
       setIsSubmitting(false);
@@ -44,7 +44,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 lg:px-12 bg-[#F8F9FA]" data-testid="contact-section">
+    <section
+      id="contact"
+      className="py-20 px-6 lg:px-12 bg-[#F8F9FA]"
+      data-testid="contact-section"
+    >
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,11 +56,15 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] mb-4" style={{ fontFamily: 'Raleway' }}>
+          <h2
+            className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] mb-4"
+            style={{ fontFamily: "Raleway" }}
+          >
             Get in Touch
           </h2>
           <p className="text-[#6B7A99]">
-            Have questions about our healthcare solutions? Our team is here to help.
+            Have questions about our healthcare solutions? Our team is here to
+            help.
           </p>
         </motion.div>
 
@@ -71,7 +79,10 @@ const ContactSection = () => {
           <form onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-2" style={{ fontFamily: 'Raleway' }}>
+                <label
+                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  style={{ fontFamily: "Raleway" }}
+                >
                   Full Name
                 </label>
                 <input
@@ -86,7 +97,10 @@ const ContactSection = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-2" style={{ fontFamily: 'Raleway' }}>
+                <label
+                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  style={{ fontFamily: "Raleway" }}
+                >
                   Email Address
                 </label>
                 <input
@@ -104,7 +118,10 @@ const ContactSection = () => {
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-2" style={{ fontFamily: 'Raleway' }}>
+                <label
+                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  style={{ fontFamily: "Raleway" }}
+                >
                   Company
                 </label>
                 <input
@@ -118,7 +135,10 @@ const ContactSection = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-2" style={{ fontFamily: 'Raleway' }}>
+                <label
+                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  style={{ fontFamily: "Raleway" }}
+                >
                   Phone
                 </label>
                 <input
@@ -134,7 +154,10 @@ const ContactSection = () => {
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-[#1A1A1A] mb-2" style={{ fontFamily: 'Raleway' }}>
+              <label
+                className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                style={{ fontFamily: "Raleway" }}
+              >
                 Message
               </label>
               <textarea
@@ -155,10 +178,15 @@ const ContactSection = () => {
               type="submit"
               disabled={isSubmitting}
               className="w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 disabled:opacity-70 text-sm"
-              style={{ background: 'linear-gradient(135deg, #13B58E, #22C9A5)', fontFamily: 'Raleway' }}
+              style={{
+                background: "linear-gradient(135deg, #13B58E, #22C9A5)",
+                fontFamily: "Raleway",
+              }}
               data-testid="contact-submit-button"
             >
-              {isSubmitting ? "Sending..." : (
+              {isSubmitting ? (
+                "Sending..."
+              ) : (
                 <>
                   Send Message
                   <Send size={16} />
@@ -171,9 +199,9 @@ const ContactSection = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className={`mt-6 text-center p-4 rounded-xl text-sm ${
-                  formStatus.type === 'success' 
-                    ? 'bg-green-50 text-green-700 border border-green-200' 
-                    : 'bg-red-50 text-red-700 border border-red-200'
+                  formStatus.type === "success"
+                    ? "bg-green-50 text-green-700 border border-green-200"
+                    : "bg-red-50 text-red-700 border border-red-200"
                 }`}
                 data-testid="contact-form-status"
               >
