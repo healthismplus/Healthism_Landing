@@ -1,6 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import Navigation from "@/components/shared/Navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 /* ================= TERMS DATA ================= */
@@ -517,6 +517,11 @@ const TERMS_DATA = [
 const TermsAndConditions = () => {
   const [activeTab, setActiveTab] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const scrollToSection = (sectionId) => {
     navigate(`/?section=${sectionId}`);
   };
