@@ -23,6 +23,8 @@ import TeamPage from "./pages/TeamPage";
 // Styles
 import "./styles/design-system.css";
 import "./App.css";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function HomePage() {
   const [activeTab, setActiveTab] = useState("individual");
@@ -31,27 +33,27 @@ function HomePage() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   // Handle contact click - scroll to contact section
   const handleContactClick = () => {
-    scrollToSection('contact');
+    scrollToSection("contact");
   };
 
   return (
-    <div className="App" style={{ background: '#FFFFFF' }}>
+    <div className="App" style={{ background: "#FFFFFF" }}>
       {/* Navigation */}
-      <Navigation 
-        onSectionClick={scrollToSection} 
-        activeTab={activeTab} 
+      <Navigation
+        onSectionClick={scrollToSection}
+        activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
 
       {/* Hero Section with Tab Switcher */}
-      <HeroSection 
-        activeTab={activeTab} 
+      <HeroSection
+        activeTab={activeTab}
         setActiveTab={setActiveTab}
         onContactClick={handleContactClick}
       />
@@ -59,10 +61,16 @@ function HomePage() {
       {/* Dynamic Content Based on Active Tab */}
       <AnimatePresence mode="wait">
         {activeTab === "individual" && (
-          <IndividualContent key="individual" onContactClick={handleContactClick} />
+          <IndividualContent
+            key="individual"
+            onContactClick={handleContactClick}
+          />
         )}
         {activeTab === "corporate" && (
-          <CorporateContent key="corporate" onContactClick={handleContactClick} />
+          <CorporateContent
+            key="corporate"
+            onContactClick={handleContactClick}
+          />
         )}
         {activeTab === "partner" && (
           <PartnerContent key="partner" onContactClick={handleContactClick} />
@@ -86,6 +94,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </BrowserRouter>
   );
