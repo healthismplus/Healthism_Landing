@@ -44,7 +44,12 @@ const IndividualContent = ({ onContactClick }) => {
       steps: "9,500 steps",
       time: "50 mins",
     },
-    { stage: 12, title: "Walk It Off", steps: "12,500 steps", time: "60 mins" },
+    {
+      stage: 12,
+      title: "Walk It Off",
+      steps: "12,500 steps",
+      time: "60 mins",
+    },
   ];
 
   const discounts = [
@@ -53,6 +58,7 @@ const IndividualContent = ({ onContactClick }) => {
     { value: "50%", label: "Wellness Services" },
     { value: "70%", label: "Post-plan Diagnostics" },
   ];
+
   const plans = [
     {
       name: "Health Save Pro",
@@ -139,7 +145,6 @@ const IndividualContent = ({ onContactClick }) => {
         "Gynecologist",
       ],
     },
-
     {
       name: "Health Save Plus",
       price: "₹5,900",
@@ -167,7 +172,6 @@ const IndividualContent = ({ onContactClick }) => {
         "Diabetes Panel and HBA1C",
       ],
     },
-
     {
       name: "Health Save Prime",
       price: "₹11,800",
@@ -197,7 +201,6 @@ const IndividualContent = ({ onContactClick }) => {
         "Vitamin D Total-25 Hydroxy",
       ],
     },
-
     {
       name: "Health Save Pro Plus",
       price: "₹23,600",
@@ -250,83 +253,75 @@ const IndividualContent = ({ onContactClick }) => {
 
   const aiFeatures = [
     {
-      icon: <img src="/assets/aiHealth/diet.svg" alt="foods" />,
+      icon: <img src="/assets/aiHealth/diet.svg" alt="foods" className="w-7 h-7 object-contain" />,
       title: "AI Dietician",
       desc: "Instant meal analysis and personalized nutrition plans.",
     },
     {
-      icon: <img src="/assets/aiHealth/pres.svg" alt="prescription" />,
+      icon: <img src="/assets/aiHealth/pres.svg" alt="prescription" className="w-7 h-7 object-contain" />,
       title: "Prescription AI",
       desc: "Understand your medication with deep clinical insights.",
     },
     {
-      icon: <img src="/assets/aiHealth/report.svg" alt="activity" />,
+      icon: <img src="/assets/aiHealth/report.svg" alt="activity" className="w-7 h-7 object-contain" />,
       title: "Health Report AI",
       desc: "Predictive analysis of your long-term health trends.",
     },
     {
-      icon: <img src="/assets/aiHealth/tracker.svg" alt="calorie" />,
+      icon: <img src="/assets/aiHealth/tracker.svg" alt="calorie" className="w-7 h-7 object-contain" />,
       title: "Calorie Tracker AI",
       desc: "Log your daily activities with just a photo.",
     },
   ];
+
   const PricingCard = ({ plan, isActive, onContactClick }) => {
     return (
       <motion.div
-        animate={{ scale: isActive ? 1.03 : 0.95 }}
+        animate={{ scale: isActive ? 1.02 : 0.96 }}
         transition={{ duration: 0.3 }}
         className={`
-        rounded-2xl p-10 mt-10 mb-14 relative h-full flex flex-col justify-between
-        transition-all duration-300
-        ${
-          isActive
-            ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
-            : "bg-white border border-gray-200 opacity-70"
-        }
-      `}
+          rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-10
+          mt-8 sm:mt-10 mb-10 sm:mb-14 relative h-full flex flex-col justify-between
+          transition-all duration-300
+          ${
+            isActive
+              ? "bg-white border-2 border-[#006B5A] shadow-xl z-10"
+              : "bg-white border border-gray-200 opacity-80"
+          }
+        `}
       >
-        {/* TAG */}
         {plan.tag && (
           <div className="absolute -top-3 left-1/2 -translate-x-1/2">
             <span
-              className={`
-              text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide
-              ${plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"}
-            `}
+              className={`text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-wide ${
+                plan.tag === "Most Popular" ? "bg-[#006B5A]" : "bg-[#2E3A8C]"
+              }`}
             >
               {plan.tag.toUpperCase()}
             </span>
           </div>
         )}
 
-        {/* CONTENT */}
         <div>
-          {/* TITLE */}
-          <h3 className="text-[16px] font-bold text-[#1A1A1A] mb-2">
+          <h3 className="text-[15px] sm:text-[16px] font-bold text-[#1A1A1A] mb-2">
             {plan.name}
           </h3>
 
-          {/* PRICE */}
           <div className="mb-4">
-            <span className="text-[32px] font-extrabold text-[#1A1A1A]">
+            <span className="text-[28px] sm:text-[30px] md:text-[32px] font-extrabold text-[#1A1A1A] break-words">
               {plan.price}
             </span>
-            <span className="text-[12px] text-[#6B7A99] ml-1">
-              {plan.period}
-            </span>
+            <span className="text-[12px] text-[#6B7A99] ml-1">{plan.period}</span>
           </div>
 
-          {/* FEATURES */}
           <div>
-            <p className="text-[10px] font-semibold text-gray-400 mb-2">
-              FEATURES:
-            </p>
+            <p className="text-[10px] font-semibold text-gray-400 mb-2">FEATURES:</p>
 
             <ul className="space-y-2 mb-4">
               {plan.features.map((feature, j) => (
-                <li key={j} className="flex items-start gap-2 text-[12px]">
-                  <Check className="text-[#13B58E] mt-0.5" size={14} />
-                  <span className="text-[#6B7A99] leading-relaxed">
+                <li key={j} className="flex items-start gap-2 text-[11px] sm:text-[12px]">
+                  <Check className="text-[#13B58E] mt-0.5 shrink-0" size={14} />
+                  <span className="text-[#6B7A99] leading-relaxed break-words">
                     {feature}
                   </span>
                 </li>
@@ -334,34 +329,31 @@ const IndividualContent = ({ onContactClick }) => {
             </ul>
           </div>
 
-          {/* BLOOD TESTS */}
           {plan.tests && (
-            <div className="bg-[#F3F6F7] p-3 rounded-lg text-[11px] text-[#6B7A99] mb-4">
-              <p className="text-[10px] font-semibold text-gray-400 mb-1">
-                BLOOD TESTS:
-              </p>
+            <div className="bg-[#F3F6F7] p-3 rounded-lg text-[11px] text-[#6B7A99] mb-4 leading-relaxed break-words">
+              <p className="text-[10px] font-semibold text-gray-400 mb-1">BLOOD TESTS:</p>
               {plan.tests.join(", ")}
             </div>
           )}
         </div>
 
-        {/* BUTTON */}
         <button
           onClick={onContactClick}
           className={`
-          w-full py-3 rounded-lg text-sm font-semibold transition
-          ${
-            isActive
-              ? "bg-[#006B5A] text-white"
-              : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
-          }
-        `}
+            w-full py-3 rounded-lg text-sm font-semibold transition
+            ${
+              isActive
+                ? "bg-[#006B5A] text-white"
+                : "border border-gray-300 text-[#1A1A1A] bg-white hover:border-[#006B5A] hover:text-[#006B5A]"
+            }
+          `}
         >
           Select Plan
         </button>
       </motion.div>
     );
   };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -369,9 +361,9 @@ const IndividualContent = ({ onContactClick }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
-      {/* Everything Your Health Needs - Bento Grid */}
+      {/* Everything Your Health Needs */}
       <section
-        className="py-16 px-6 lg:px-12 bg-[#F8FAFB]"
+        className="py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-[#F8FAFB]"
         data-testid="services-section"
       >
         <div className="max-w-7xl mx-auto">
@@ -380,54 +372,50 @@ const IndividualContent = ({ onContactClick }) => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="text-center mb-10"
+            className="text-center mb-8 sm:mb-10"
             style={{ fontFamily: "Plus Jakarta Sans" }}
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A] mb-2"
+              className="text-[28px] sm:text-[34px] md:text-[40px] font-extrabold text-[#1A1A1A] mb-2 leading-tight"
             >
               Everything Your Health
             </motion.h2>
             <motion.h2
               variants={fadeUp}
-              className="text-3xl md:text-4xl font-extrabold text-[#1A1A1A]"
+              className="text-[28px] sm:text-[34px] md:text-[40px] font-extrabold text-[#1A1A1A] leading-tight"
             >
-              Needs, <span className="text-[#006B5A]"> In One App.</span>
+              Needs, <span className="text-[#006B5A]">In One App.</span>
             </motion.h2>
           </motion.div>
 
-          {/* Bento Grid Layout */}
-          <div className="grid grid-cols-12 gap-6 mt-12">
-            {/* LEFT CARD */}
-            <div className="col-span-12 md:col-span-4 bg-white rounded-[24px] p-6">
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5 shadow-sm">
-                <img src="/assets/book.svg" alt="book" />
+          <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6 mt-8 sm:mt-10">
+            <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
+                <img src="/assets/book.svg" alt="book" className="max-w-full max-h-full" />
               </div>
 
-              <h3 className="text-[18px] font-bold text-[#191C1D] mb-2">
+              <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
                 Book Instantly
               </h3>
 
-              <p className="text-[14px] text-[#3D4945] leading-relaxed mb-6">
+              <p className="text-[13px] sm:text-[14px] text-[#3D4945] leading-relaxed mb-5 sm:mb-6">
                 Skip the queue. Book appointments with top doctors across our
                 1,200+ partner network in seconds.
               </p>
 
-              <button className="bg-[#2AA787] text-white text-[14px] px-5 py-2.5 rounded-[12px] font-medium">
+              <button className="w-full sm:w-auto bg-[#2AA787] text-white text-[14px] px-5 py-2.5 rounded-[12px] font-medium">
                 Book Appointment
               </button>
             </div>
 
-            {/* BIG RIGHT CARD */}
-            <div className="col-span-12 md:col-span-8 relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#0F3D3A] to-[#0B2E2B] p-8 flex items-center">
-              {/* TEXT */}
-              <div className="max-w-[320px] z-10 mt-10">
-                <h3 className="text-[22px] font-semibold text-white mb-3">
+            <div className="col-span-12 md:col-span-8 relative overflow-hidden rounded-[22px] sm:rounded-[28px] bg-gradient-to-br from-[#0F3D3A] to-[#0B2E2B] p-5 sm:p-7 md:p-8 flex items-center min-h-[280px] sm:min-h-[320px]">
+              <div className="max-w-[320px] z-10 mt-0 sm:mt-6 md:mt-10 pr-16 sm:pr-24">
+                <h3 className="text-[20px] sm:text-[22px] font-semibold text-white mb-3 leading-tight">
                   Order Medicines & Tests
                 </h3>
 
-                <p className="text-[14px] text-white/70 mb-6 leading-relaxed">
+                <p className="text-[13px] sm:text-[14px] text-white/70 mb-6 leading-relaxed">
                   Quality healthcare delivered to your doorstep. Genuine
                   medicines and NABL-accredited lab tests.
                 </p>
@@ -437,59 +425,57 @@ const IndividualContent = ({ onContactClick }) => {
                 </button>
               </div>
 
-              {/* IMAGE */}
               <img
                 src="/assets/medical-supplies.png"
-                className="absolute right-0 bottom-0 h-full object-contain opacity-90"
+                alt="medical supplies"
+                className="absolute right-0 bottom-0 h-[70%] sm:h-[78%] md:h-full max-w-[45%] object-contain opacity-90"
               />
             </div>
 
-            {/* BOTTOM LEFT */}
-            <div className="col-span-12 md:col-span-4 bg-white rounded-[24px] p-6">
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5 shadow-sm">
+            <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
                 <img
                   src="/assets/healthlocker.svg"
                   alt="digital health locker"
+                  className="max-w-full max-h-full"
                 />
               </div>
 
-              <h3 className="text-[18px] font-bold text-[#191C1D] mb-2">
+              <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
                 Digital Health Locker
               </h3>
 
-              <p className="text-[14px] text-[#3D4945] leading-relaxed">
+              <p className="text-[13px] sm:text-[14px] text-[#3D4945] leading-relaxed">
                 Securely store and share your medical reports and prescriptions
                 24/7.
               </p>
             </div>
 
-            {/* BOTTOM MIDDLE */}
-            <div className="col-span-12 md:col-span-4 bg-white rounded-[24px] p-6">
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5 shadow-sm">
-                <img src="/assets/fitness.svg" alt="fitness" />
+            <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
+                <img src="/assets/fitness.svg" alt="fitness" className="max-w-full max-h-full" />
               </div>
 
-              <h3 className="text-[18px] font-bold text-[#191C1D] mb-2">
+              <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
                 Fitness Challenges
               </h3>
 
-              <p className="text-[14px] text-[#3D4945] leading-relaxed">
+              <p className="text-[13px] sm:text-[14px] text-[#3D4945] leading-relaxed">
                 Water intake tracking, step goals, and gamified health journeys
                 with rewards.
               </p>
             </div>
 
-            {/* BOTTOM RIGHT */}
-            <div className="col-span-12 md:col-span-4 bg-white rounded-[24px] p-6">
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-5 shadow-sm">
-                <img src="/assets/talk.svg" alt="video call" />
+            <div className="col-span-12 md:col-span-4 bg-white rounded-[20px] sm:rounded-[24px] p-5 sm:p-6">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-4 sm:mb-5 shadow-sm">
+                <img src="/assets/talk.svg" alt="video call" className="max-w-full max-h-full" />
               </div>
 
-              <h3 className="text-[18px] font-bold text-[#191C1D] mb-2">
+              <h3 className="text-[17px] sm:text-[18px] font-bold text-[#191C1D] mb-2">
                 Talk to an Expert
               </h3>
 
-              <p className="text-[14px] text-[#3D4945] leading-relaxed">
+              <p className="text-[13px] sm:text-[14px] text-[#3D4945] leading-relaxed">
                 Instant access to Doctors and Nutritionists via seamless chat or
                 HD video calls.
               </p>
@@ -498,30 +484,28 @@ const IndividualContent = ({ onContactClick }) => {
         </div>
       </section>
 
-      {/* Provider Network - Stats Section */}
-      <section className="py-24 px-6 lg:px-12 bg-[#070B0C]">
+      {/* Provider Network */}
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[#070B0C]">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between mb-16 ">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-10 mb-10 sm:mb-12 md:mb-16">
             <div>
-              {/* Heading */}
-              <h2 className="text-[44px] md:text-[56px] font-bold leading-[1.1] text-white">
+              <h2 className="text-[30px] sm:text-[38px] md:text-[48px] lg:text-[56px] font-bold leading-[1.1] text-white">
                 1,200+ Providers.
               </h2>
 
-              <h2 className="text-[44px] md:text-[56px] font-bold leading-[1.1] text-[#7FE3CF] mb-6">
+              <h2 className="text-[30px] sm:text-[38px] md:text-[48px] lg:text-[56px] font-bold leading-[1.1] text-[#7FE3CF] mb-5 sm:mb-6">
                 One Membership.
               </h2>
 
-              {/* Subtext */}
-              <p className="text-white/50 text-[15px] leading-relaxed max-w-[520px]">
+              <p className="text-white/50 text-[14px] sm:text-[15px] leading-relaxed max-w-[520px]">
                 From emergency services to routine wellness, our network is
                 carefully curated to bring you the best in medical care.
               </p>
             </div>
-            {/* FLOATING BADGE */}
-            <div>
-              <div className=" bg-[#0F2F2C] border border-[#1E5F58] px-6 py-4 rounded-xl shadow-lg">
-                <div className="text-[26px] font-bold text-[#7FE3CF]">
+
+            <div className="self-start lg:self-auto">
+              <div className="bg-[#0F2F2C] border border-[#1E5F58] px-5 sm:px-6 py-4 rounded-xl shadow-lg">
+                <div className="text-[22px] sm:text-[26px] font-bold text-[#7FE3CF]">
                   50,000+
                 </div>
                 <div className="text-[10px] text-[#7FE3CF]/70 tracking-widest uppercase mt-1">
@@ -530,17 +514,15 @@ const IndividualContent = ({ onContactClick }) => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {providerTypes.map((type, i) => (
               <div
                 key={i}
-                className="bg-[#121617] border border-[#1F2A2C] rounded-[18px] py-8 flex flex-col items-center justify-center transition-all hover:border-[#2AA787] hover:shadow-[0_0_20px_rgba(42,167,135,0.15)]"
+                className="bg-[#121617] border border-[#1F2A2C] rounded-[16px] sm:rounded-[18px] py-6 sm:py-8 px-3 flex flex-col items-center justify-center text-center transition-all hover:border-[#2AA787] hover:shadow-[0_0_20px_rgba(42,167,135,0.15)]"
               >
-                {/* ICON */}
-                <img src={type.icon} alt={type.label} />
-
-                {/* LABEL */}
-                <div className="text-[12px] text-white/70 tracking-wide pt-3">
+                <img src={type.icon} alt={type.label} className="h-10 sm:h-auto object-contain" />
+                <div className="text-[11px] sm:text-[12px] text-white/70 tracking-wide pt-3">
                   {type.label}
                 </div>
               </div>
@@ -550,45 +532,39 @@ const IndividualContent = ({ onContactClick }) => {
       </section>
 
       {/* Fad 2 Fit & Kart */}
-      <section className="py-24 px-6 lg:px-12 bg-[#F2F6F5]">
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[#F2F6F5]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 items-start">
-            {/* LEFT */}
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             <div>
-              {/* Heading */}
-              <div className="mb-10">
-                <span className="text-[12px] text-[#006B5A] font-semibold tracking-[0.2em] uppercase">
+              <div className="mb-8 sm:mb-10">
+                <span className="text-[11px] sm:text-[12px] text-[#006B5A] font-semibold tracking-[0.2em] uppercase">
                   12-WEEK JOURNEY
                 </span>
 
-                <h3 className="text-[38px] leading-[1.2] font-extrabold text-[#191C1D] mt-4">
+                <h3 className="text-[28px] sm:text-[34px] md:text-[38px] leading-[1.2] font-extrabold text-[#191C1D] mt-4">
                   Fad 2 Fit <span className="text-[#006B5A]">Challenge</span>
                 </h3>
               </div>
 
-              {/* Stages */}
-              <div className="space-y-7">
+              <div className="space-y-6 sm:space-y-7">
                 {challengeStages.map((stage, i) => (
-                  <div key={i} className="flex items-start gap-5">
-                    {/* Circle */}
+                  <div key={i} className="flex items-start gap-4 sm:gap-5">
                     <div
-                      className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-semibold
-                ${
-                  i === 0
-                    ? "bg-[#006B5A] text-white"
-                    : "bg-[#006B5A33] text-[#006B5A]"
-                }`}
+                      className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0 ${
+                        i === 0
+                          ? "bg-[#006B5A] text-white"
+                          : "bg-[#006B5A33] text-[#006B5A]"
+                      }`}
                     >
                       {stage.stage}
                     </div>
 
-                    {/* Text */}
                     <div>
-                      <p className="text-[15px] font-semibold text-[#191C1D]">
+                      <p className="text-[14px] sm:text-[15px] font-semibold text-[#191C1D] leading-snug">
                         Stage {stage.stage}: {stage.title}
                       </p>
 
-                      <p className="text-[13px] text-[#64748B] mt-1">
+                      <p className="text-[12px] sm:text-[13px] text-[#64748B] mt-1">
                         {stage.steps} • {stage.time}
                       </p>
                     </div>
@@ -596,40 +572,36 @@ const IndividualContent = ({ onContactClick }) => {
                 ))}
               </div>
 
-              {/* Button */}
               <button
                 onClick={onContactClick}
-                className="mt-12 w-[380px] py-3.5 rounded-[12px] bg-[#239882] text-white font-semibold text-[14px] hover:opacity-95 transition"
+                className="mt-8 sm:mt-10 md:mt-12 w-full sm:w-auto sm:min-w-[260px] md:min-w-[320px] px-6 py-3.5 rounded-[12px] bg-[#239882] text-white font-semibold text-[14px] hover:opacity-95 transition"
               >
                 Take Challenge
               </button>
             </div>
 
-            {/* RIGHT */}
-            <div className="bg-[#F7FAF9] rounded-3xl p-10">
-              {/* Heading */}
-              <div className="mb-8">
-                <h3 className="text-[34px] leading-[1.2] font-extrabold text-[#191C1D]">
+            <div className="bg-[#F7FAF9] rounded-[24px] sm:rounded-3xl p-5 sm:p-7 md:p-10">
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-[28px] sm:text-[30px] md:text-[34px] leading-[1.2] font-extrabold text-[#191C1D]">
                   HealthismPlus <span className="text-[#006B5A]">Kart.</span>
                 </h3>
 
-                <p className="text-[#3D4945] text-[14px] mt-2">
+                <p className="text-[#3D4945] text-[13px] sm:text-[14px] mt-2">
                   Save on Everything Health & Wellness
                 </p>
               </div>
 
-              {/* Cards */}
-              <div className="grid grid-cols-2 gap-7">
+              <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-7">
                 {discounts.map((discount, i) => (
                   <div
                     key={i}
-                    className="bg-[#EEF3F2] rounded-2xl py-10 text-center"
+                    className="bg-[#EEF3F2] rounded-xl sm:rounded-2xl py-6 sm:py-8 md:py-10 px-3 text-center"
                   >
-                    <div className="text-[36px] font-extrabold text-[#006B5A]">
+                    <div className="text-[24px] sm:text-[30px] md:text-[36px] font-extrabold text-[#006B5A] leading-none">
                       {discount.value}
                     </div>
 
-                    <div className="text-[12px] text-[#3D4945] font-bold mt-1 tracking-wide">
+                    <div className="text-[11px] sm:text-[12px] text-[#3D4945] font-bold mt-2 tracking-wide leading-snug">
                       {discount.label}
                     </div>
                   </div>
@@ -641,25 +613,27 @@ const IndividualContent = ({ onContactClick }) => {
       </section>
 
       {/* Pricing Slider */}
-      <section className="py-16 px-6 lg:px-12 bg-[#EDF3F4]">
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-[#191C1D]  font-extrabold text-[40px]">
+      <section className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-12 bg-[#EDF3F4]">
+        <div className="max-w-7xl mx-auto text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-[#191C1D] font-extrabold text-[28px] sm:text-[34px] md:text-[40px] leading-tight">
             Choose Your Health Save Plan
           </h2>
-          <p className="text-[16px] text-[#3D4945] mt-2">
+          <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#3D4945] mt-2">
             Simple, transparent pricing for every lifestyle.
           </p>
         </div>
 
         <Swiper
-          spaceBetween={20}
+          spaceBetween={16}
           centeredSlides={true}
           loop={true}
           breakpoints={{
-            0: { slidesPerView: 1.1 },
-            640: { slidesPerView: 1.3 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            0: { slidesPerView: 1.05, spaceBetween: 14 },
+            480: { slidesPerView: 1.1, spaceBetween: 16 },
+            640: { slidesPerView: 1.25, spaceBetween: 16 },
+            768: { slidesPerView: 1.6, spaceBetween: 18 },
+            1024: { slidesPerView: 2.3, spaceBetween: 20 },
+            1280: { slidesPerView: 3, spaceBetween: 20 },
           }}
         >
           {plans.map((plan, i) => (
@@ -677,23 +651,21 @@ const IndividualContent = ({ onContactClick }) => {
       </section>
 
       {/* AI Health Section */}
-      <section className="py-24 px-6 lg:px-12 bg-[#EDF3F4]">
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[#EDF3F4]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* LEFT */}
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
             <div>
-              <h2 className="text-[38px] leading-[1.15] font-extrabold text-[#0F172A]">
+              <h2 className="text-[28px] sm:text-[34px] md:text-[38px] leading-[1.15] font-extrabold text-[#0F172A]">
                 Your Personal <br />
                 AI Health Team. <br />
                 <span className="text-[#006B5A]">Always On.</span>
               </h2>
 
-              {/* FEATURES */}
-              <div className="grid grid-cols-2 gap-5 mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-8 sm:mt-10">
                 {aiFeatures.map((feature, i) => (
                   <div
                     key={i}
-                    className="p-5 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E2E8F0] hover:shadow-sm transition"
+                    className="p-4 sm:p-5 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E2E8F0] hover:shadow-sm transition"
                   >
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3">
                       {feature.icon}
@@ -711,20 +683,15 @@ const IndividualContent = ({ onContactClick }) => {
               </div>
             </div>
 
-            {/* RIGHT */}
+            <div className="relative w-full min-h-[280px] sm:min-h-[320px] md:min-h-[380px] rounded-[24px] sm:rounded-[32px] bg-[#2E3132] flex items-center justify-center flex-col gap-8 sm:gap-10 px-6 py-10 overflow-hidden">
+              <div className="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#006B5A] blur-2xl opacity-40"></div>
 
-            <div className="relative w-full h-full  rounded-[32px] bg-[#2E3132] flex items-center justify-center flex-col gap-10">
-              {/* Glow Circle */}
-              <div className="absolute w-28 h-28 rounded-full bg-[#006B5A] blur-2xl opacity-40"></div>
-
-              {/* Icon Circle */}
-              <div className="relative w-32 h-32 rounded-full bg-[#006B5A] flex items-center justify-center text-white text-2xl shadow-lg">
-                <img src="/assets/aiHealth/brain.svg" alt="brain" />
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#006B5A] flex items-center justify-center text-white text-2xl shadow-lg">
+                <img src="/assets/aiHealth/brain.svg" alt="brain" className="w-12 sm:w-14 md:w-auto" />
               </div>
 
-              {/* Quote */}
-              <div className="px-5 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-center max-w-[260px]">
-                <p className="text-white text-[14px] ">
+              <div className="px-4 sm:px-5 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-center max-w-[260px] sm:max-w-[300px]">
+                <p className="text-white text-[13px] sm:text-[14px] leading-relaxed">
                   "Your recovery is ahead of schedule. Keep it up!"
                 </p>
               </div>
