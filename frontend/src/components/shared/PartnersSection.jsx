@@ -27,7 +27,7 @@ const PartnersSection = () => {
               {/* Top Row (3 logos) */}
               <div className="grid grid-cols-3 gap-10 md:gap-16 items-center justify-items-center mb-10">
                 <img
-                  src="/assets/associates/adityabirla.jpg"
+                  src="/assets/associates/adityaBirla.jpg"
                   alt="Aditya Birla Wellness"
                   className="h-14 md:h-40 object-fit opacity-80 hover:opacity-100 transition duration-300"
                 />
