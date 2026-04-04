@@ -87,6 +87,19 @@ const Navigation = ({ onSectionClick, activeTab, setActiveTab }) => {
             >
               Download App
             </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              href="https://hms.healthismplus.com/#/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block ml-5 px-5 py-3 rounded-full bg-[#2A3077] text-white text-sm font-semibold shadow-sm hover:opacity-95 transition"
+              style={{
+                background: `linear-gradient(90deg, #2A3077 0%, #8FB3FF 100%)`,
+              }}
+            >
+              Sign in to HMS
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}

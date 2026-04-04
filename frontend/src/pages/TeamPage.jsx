@@ -216,14 +216,7 @@ const TeamPage = () => {
       linkedin: "https://www.linkedin.com/in/shreyas-kalate-8aa37b2bb",
       photo: "/team/shreyas.jpeg",
     },
-    {
-      name: "Vighnesh Rane",
-      role: "Backend Developer",
-      initials: "V",
-      bio: "Backend developer contributing to the core technology infrastructure of HealthismPlus platform.",
-      linkedin: "https://www.linkedin.com/in/vighnesh-rane-b84566214",
-      photo: "/team/Vighnesh.jpeg",
-    },
+
     {
       name: "Ayush Mer",
       role: "Frontend Developer",

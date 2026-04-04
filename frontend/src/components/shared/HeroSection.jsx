@@ -15,7 +15,7 @@ const HeroSection = ({ activeTab, setActiveTab, onContactClick }) => {
   };
 
   const stats = [
-    { number: "50,000+", label: "Users Monthly" },
+    { number: "50,000+", label: "Users" },
     { number: "1,200+", label: "Global Partners" },
     { number: "700+", label: "Medical Experts" },
     { number: "₹50Mn+", label: "Annual Savings" },

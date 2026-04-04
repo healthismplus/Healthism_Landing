@@ -47,7 +47,7 @@ const PartnerContent = ({ onContactClick }) => {
     clinics: [
       "List your services on the HealthismPlus marketplace and get discovered by thousands of health-conscious users nearby.",
       "Manage OPD appointments, live queues, and patient records from a single, unified reception panel.",
-      "Our AI receptionist handles incoming calls, bookings, and WhatsApp confirmations in Hindi, English, and Marathi.",
+      "Our AI receptionist handles incoming calls, bookings, and WhatsApp confirmations in Hindi, English, and other Regional languages.",
       "Capture patient details once and access their complete records, prescriptions, and reports anytime.",
       "Issue bills, manage invoices, and process payments without switching between systems.",
       "Access real-time insights on patient load, peak hours, and service performance to run a tighter operation.",
@@ -92,11 +92,7 @@ const PartnerContent = ({ onContactClick }) => {
       healthism: true,
     },
     { feature: "Network Wide Referrals", directory: "Basic", healthism: true },
-    {
-      feature: "Digital Marketing Tools",
-      directory: "Paid Extras",
-      healthism: true,
-    },
+
     { feature: "Dedicated Support Team", directory: false, healthism: true },
   ];
 

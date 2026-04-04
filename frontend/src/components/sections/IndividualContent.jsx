@@ -90,7 +90,7 @@ const IndividualContent = ({ onContactClick }) => {
     },
     {
       name: "Health Save Max",
-      price: "₹17700",
+      price: "₹29,500",
       period: "/year",
       tag: "Best Value",
       highlight: true,

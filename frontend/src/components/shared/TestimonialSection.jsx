@@ -76,7 +76,7 @@ const TestimonialSection = ({ variant = "individual" }) => {
                     </div>
 
                     {/* Text */}
-                    <div className="text-[#3F3F3F] text-[15px] md:text-[16px] leading-[1.45] whitespace-pre-line">
+                    <div className="text-[#3F3F3F] text-[15px] md:text-[16px] leading-[1.45] whitespace-pre-line italic">
                       "{testimonial.quote}"
                     </div>
                   </div>
