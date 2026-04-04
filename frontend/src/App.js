@@ -25,6 +25,7 @@ import "./styles/design-system.css";
 import "./App.css";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import NotFoundPage from "./pages/NotFound";
 
 function HomePage() {
   const [activeTab, setActiveTab] = useState("individual");
@@ -109,6 +110,7 @@ function App() {
         <Route path="/team" element={<TeamPage />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
